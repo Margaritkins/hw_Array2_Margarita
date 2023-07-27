@@ -11,10 +11,8 @@ findDupls = (arr) => {
     if (checker === arr[index]) {
       arraDupl.push(checker);
       checker = arr[index];
-    }
-    else if(checker !== arr[index]) {
-      checker = arr[index+1];
-      
+    } else if (checker !== arr[index]) {
+      checker = arr[index + 1];
     }
   }
   return arraDupl;
