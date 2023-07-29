@@ -1,20 +1,23 @@
 //Something wrong, but I don't know what)
-const arrayWithDuplNumbers = [1, 2, 3, 1, 5, 6, 1, 2, 10, 5];
+"use strict";
+const arrayWithDuplNumbers = [1, 2, 6, 3, 1,7, 5, 6, 1, 2, 2, 2, 2, 2, 2, 5, 7];
 
 const sortedNumbers = arrayWithDuplNumbers.sort();
 console.log(sortedNumbers);
 
-findDupls = (arr) => {
-  let checker = arr[0];
-  const arraDupl = [];
-  for (let index = 0; index < arr.length; index++) {
-    if (checker === arr[index]) {
-      arraDupl.push(checker);
-      checker = arr[index];
-    } else if (checker !== arr[index]) {
-      checker = arr[index + 1];
+const getDupls = (array) => {
+  const dupls = [];
+  for (let index = 0; index < array.length; index++) {
+    if (
+      array.at(index) === array.at(index + 1) &&
+      dupls.includes(array.at(index)) === false
+    ) {
+      dupls.push(array.at(index));
+    } else {
+      dupls;
     }
   }
-  return arraDupl;
+  return dupls;
 };
-console.log(findDupls(sortedNumbers));
+console.log(getDupls(arrayWithDuplNumbers));
+
